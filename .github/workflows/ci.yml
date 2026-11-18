@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  # For a release pull request opened without RELEASE_PLEASE_TOKEN, which starts no workflow by itself.
+  workflow_dispatch:
 
 permissions:
   contents: read

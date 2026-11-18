@@ -10,7 +10,7 @@ The server's name (`careers`) and URL are the same in both MCP files. The portal
 
 ## Working on the skill
 
-Write or revise it with the `skill-writing` skill. It must stay true for any version of the portal: describe workflows and the portal's rules, and never name a tool the server might not offer, since the tools are generated from the portal's staff operations and vary with the person's grant. Examples use synthetic people such as `ada.synthetic@example.test`, never real candidates.
+Write or revise it with the `skill-writing` skill. It must stay true for any version of the portal: describe workflows and the portal's rules, and never name a tool the server might not offer, since the tools are generated from the portal's staff operations and change with its versions (every staff tool is listed; the person's grant decides what a call may do). Examples use synthetic people such as `ada.synthetic@example.test`, never real candidates.
 
 A file named `SKILL.md` anywhere below a skill's folder is installed as a separate skill, so templates use another name.
 
@@ -20,4 +20,4 @@ Tools are pinned in `mise.toml`; run `mise install` once. `mise run check` is th
 
 ## Releases
 
-Pull requests are squash-merged with a conventional title, such as `feat(skill): explain stage moves` or `fix: correct the server URL`. release-please turns those titles into a release pull request that bumps `version.txt`, both plugin manifests, and `CHANGELOG.md`; merging it publishes the release. Claude Code updates an installed plugin only when its version changes.
+Pull requests are squash-merged with a conventional title, such as `feat(skill): explain stage moves` or `fix: correct the server URL`. release-please turns those titles into a release pull request that bumps `version.txt`, both plugin manifests, and `CHANGELOG.md`; merging it publishes the release. Claude Code updates an installed plugin only when its version changes. A release pull request runs CI only when the repository has a `RELEASE_PLEASE_TOKEN` secret (GitHub starts no workflow from the default token); without it, run the check from the Actions tab before merging.

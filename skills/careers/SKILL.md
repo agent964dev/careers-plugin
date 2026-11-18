@@ -9,7 +9,7 @@ The careers portal (https://careers.agent964.com) is Agent964's hiring system: j
 
 ## Before acting
 
-List the server's tools and read their descriptions and input schemas; they are the authority on what you can do. The set depends on the portal's version and on the person's grant, so never assume a tool exists, and when what the user wants has no tool, say so instead of approximating it with another.
+List the server's tools and read their descriptions and input schemas; they are the authority on what you can do. The set depends on the portal's version (every staff tool is listed; what the person may actually do depends on their grant, checked when a tool is called), so never assume a tool exists, and when what the user wants has no tool, say so instead of approximating it with another.
 
 Find the exact record first. Search or list to identify the job, candidate, or application by its ID, and confirm with the user when more than one could match. Read its current state before changing it, so the change starts from what is true now and not from what the conversation assumed. After a change, read the record again or use the tool's result to report what actually happened.
 
@@ -33,7 +33,7 @@ A tool that sends email requires a request ID. Make a fresh one, such as a UUID,
 A failed tool call returns an error with a code and a message:
 
 - **`unauthenticated`**, or the server asks for sign-in: the session expired or the person disconnected this agent. Have the user sign in again through their agent's MCP login (for example `/mcp` in Claude Code, or `codex mcp login careers`), then retry.
-- **`forbidden`**: the person's grant doesn't allow this, or they no longer hold a staff grant. Signing in again won't help; tell the user that an Admin must give them the grant on the portal.
+- **`forbidden`**: either the person's grant doesn't allow this (or they no longer hold one), in which case only a portal Admin can change it; or this agent was approved for less than their grant allows (for example, they have been made an Admin since connecting), in which case they can disconnect the agent on the portal's Connected agents page and connect it again, approving the wider access. Tell the user which it may be.
 - **`invalid`**: fix the input from the message and the tool's schema.
 - **`conflict`**: the record changed or is in a state that doesn't allow this. Read it again and tell the user what changed before trying anything else.
 - **`unavailable`**: a temporary failure. Wait and retry, reusing the same request ID for a send.

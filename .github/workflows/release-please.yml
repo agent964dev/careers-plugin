@@ -14,5 +14,10 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
         with:
+          # A release pull request opened with the workflow's own token runs no CI (GitHub does not start workflows from
+          # it). With a RELEASE_PLEASE_TOKEN secret (a fine-grained token or app token with contents and pull-requests
+          # write), the release pull request runs the check like any other; without one, run the check by hand from
+          # the Actions tab (workflow_dispatch) before merging it.
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json

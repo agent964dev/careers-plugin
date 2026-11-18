@@ -113,8 +113,8 @@ Open [Connected agents](https://careers.agent964.com/staff/agents) on the portal
 If a user asked you to look at this repository, this section is for you.
 
 - **Setting it up.** Install the plugin through the route for the user's agent under [Install](#install), or add the server directly as [Without the plugin](#without-the-plugin) shows. Don't start the OAuth sign-in on the user's behalf without telling them: it opens their browser and asks them to approve you.
-- **Using it.** Read [the `careers` skill](skills/careers/SKILL.md) before calling the server's tools. List the tools first; the set depends on the user's grant and the portal's version.
-- **Access problems.** A sign-in prompt or an `unauthenticated` error means the user must sign in again. A `forbidden` error means their grant doesn't allow the action, and only a portal Admin can change that.
+- **Using it.** Read [the `careers` skill](skills/careers/SKILL.md) before calling the server's tools. List the tools first; the set changes with the portal's version, and the user's grant decides what each call may do.
+- **Access problems.** A sign-in prompt or an `unauthenticated` error means the user must sign in again. A `forbidden` error means either their grant doesn't allow the action (only a portal Admin can change that), or the agent was approved for less than their grant allows, for example after they were made an Admin; disconnecting it on the Connected agents page and connecting again fixes that.
 
 ## Privacy
 
