@@ -1,0 +1,17 @@
+{
+  "name": "careers-plugin",
+  "owner": {
+    "name": "Agent964",
+    "url": "https://careers.agent964.com"
+  },
+  "description": "The Agent964 careers portal's plugin for coding agents.",
+  "plugins": [
+    {
+      "name": "careers",
+      "source": "./",
+      "description": "The careers portal's staff MCP server, signed in through your browser, and a skill for using it well.",
+      "category": "productivity",
+      "keywords": ["mcp", "careers", "hiring"]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "careers": {
+      "type": "http",
+      "url": "https://careers.agent964.com/mcp"
+    }
+  }
+}

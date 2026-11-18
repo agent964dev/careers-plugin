@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent964 Careers"
+  short_description: "Review jobs, candidates, and applications in the careers portal as yourself"
+  default_prompt: "Use $careers to list the careers tools I can use, then help me find and review the job, candidate, or application I name."

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "careers",
+  "version": "0.1.0",
+  "description": "Connect your agent to the Agent964 careers portal's staff MCP server, signed in as you and limited to your staff grant, with a skill for reviewing jobs, candidates, and applications safely.",
+  "author": {
+    "name": "Agent964",
+    "url": "https://careers.agent964.com"
+  },
+  "homepage": "https://careers.agent964.com",
+  "repository": "https://github.com/agent964dev/careers-plugin",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "careers",
+    "hiring",
+    "recruiting",
+    "applicant-tracking",
+    "agent964"
+  ]
+}
